@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FakeStore Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>FakeStore</h1>
+    <input id="search" type="search" placeholder="Search products…" aria-label="Search products">
+    <select id="sort" aria-label="Sort products">
+      <option value="default">Sort: Default</option>
+      <option value="price-asc">Price: Low → High</option>
+      <option value="price-desc">Price: High → Low</option>
+      <option value="rating">Top rated</option>
+      <option value="title">Title A–Z</option>
+    </select>
+    <button id="cart-toggle" class="btn">Cart (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <div id="error-banner" class="banner" role="alert" hidden></div>
+  <nav id="tabs" class="tabs" aria-label="Categories"></nav>
+  <p id="result-info" class="info" aria-live="polite"></p>
+  <main id="grid" class="grid"></main>
+
+  <aside id="cart" class="cart" hidden>
+    <div class="cart-head"><h2>Your cart</h2><button id="cart-close" class="btn ghost">✕</button></div>
+    <ul id="cart-items"></ul>
+    <p class="cart-total">Total: <strong id="cart-total">$0.00</strong></p>
+    <button id="cart-clear" class="btn ghost">Clear cart</button>
+  </aside>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
